@@ -374,7 +374,7 @@
     .layout__banner {
         padding-top: 8rem;
         border-radius: 3rem;
-        animation: moverFondoX 50s linear infinite;
+        animation: moverFondoX 50s linear infinite !important;
         margin: 0 2rem;
     }
     @keyframes moverFondoX {

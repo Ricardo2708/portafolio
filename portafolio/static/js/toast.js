@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", (e) =>{
         direction: 'horizontal',
         loop: true,
 
-        slidesPerView: 5,
+        slidesPerView: 4,
         // Opción para habilitar el cambio automático entre los elementos del carrusel
         autoplay: {
           delay: 2500,
@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", (e) =>{
             spaceBetween: 20,
           },
           1024: {
-            slidesPerView: 5,
-            spaceBetween: 10,
+            slidesPerView: 4,
+            spaceBetween: 5,
           },
         },
     });

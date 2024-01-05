@@ -1,6 +1,12 @@
 /** Contacto **/
 
 .layout__contact{
+
+    border-radius: 6rem;
+    overflow: hidden;
+    margin: 0 3rem;
+    margin-top: 2rem;
+
     padding: 7rem 0;
     padding-bottom: 0rem;
     background-color: var(--white);
@@ -20,7 +26,7 @@
     background-color: var(--black);
     z-index: -1;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.613), rgba(0, 6, 88, 0.521)), 
-    url(https://res.cloudinary.com/dut4o7zjk/image/upload/v1697757597/arreglo-escritorio-vista-superior-persona-escribiendo_1_y1pqei.jpg);
+    url(https://res.cloudinary.com/dut4o7zjk/image/upload/v1704466960/paul-esch-laurent-oZMUrWFHOB4-unsplash_t7gjuc.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -29,6 +35,7 @@
 .contact__header{
     margin-bottom: 6.5rem;
     text-align: center;
+    margin-top: -2rem;
 }
 
 .contact__subtitle{
