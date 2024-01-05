@@ -1,0 +1,167 @@
+/** Servicios **/
+
+.layout__services{
+    position: relative;
+    z-index: 1;
+    margin: 5rem 8rem;
+    margin-bottom: 3rem;
+}
+
+.services__grid{
+    margin: 0 auto;
+}
+
+.services__header{
+    text-align: left;
+}
+
+.services__subtitle{
+    color: var(--color-primary);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.services__title{
+    color: var(--black);
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.services__list{
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    margin-top: 3rem;
+}
+
+.services__service{
+    width: 33%;
+    height: 33%;
+    padding: 5rem 3rem;
+    padding-bottom: 3rem;
+    padding-top: 4rem;
+    border-radius: .5rem;
+    margin-bottom: 4rem;
+    background-color: #f7f7f7;
+    transition: all 300ms ease;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    
+    
+}
+
+.services__service:hover{
+    transform: translateY(-10px);
+}
+
+.service_-content{
+    flex: 1;
+}
+
+.service_-content .project__tags{
+    color: #8a8a8a;
+}
+
+.service__container-img{
+    margin-right: 2.5rem;
+    max-width: 8.5rem;
+    flex: 1;
+}
+
+.service__title{
+    line-height: 1.4;
+    margin-bottom: 0rem;
+}
+
+.service__link{
+    color: var(--black);
+    font-size: 2rem;
+    font-weight: 500;
+    transition: all 300ms ease-in-out;
+}
+
+.service__description{
+    overflow: hidden;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    color: var(--black);
+}
+
+.service__more{
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    padding-left: 5rem;
+    text-transform: capitalize;
+    transition: all 300ms ease-in-out;
+    color: var(--black);
+}
+
+.service__more i{
+    margin-left: 0.5rem;
+}
+
+.service__more::before{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    content: '';
+    width: 3.4rem;
+    height: 2px;
+    background-color: var(--black);
+    transition: all 300ms ease-in-out;
+}
+
+.service__more:hover,
+.service__link:hover{
+    color: var(--color-primary);
+}
+
+
+.service__more:hover::before{
+    background-color: var(--color-primary);
+}
+
+
+/* .services__service--bottom{
+    margin-top: 0rem;
+}
+
+.services__service--middle{
+    margin-top: 2rem;
+}
+
+.services__service--top{
+    margin-top: 4rem;
+}  */
+
+
+
+
+/* shapes servicios */
+.service-shapes__item{
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.service-shapes--shape1{
+    top: -228px;
+    right: -15px;
+
+}
+.service-shapes--shape2{
+    top: -14px;
+    left: 50%;
+    opacity: 0.6;
+}
+
+.service-shapes--shape3{
+    top: 63px;
+    right: 255px;
+}

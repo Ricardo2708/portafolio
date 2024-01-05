@@ -1,0 +1,426 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="pagina web de programacion web, desarrollo web, marketing y diseño">
+
+    <link rel="preload" href="{% static 'css/dark.css'%}" as="style">
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/banner.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/servicios.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/proyectos.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estadisticas.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reseñas.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/clientes.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/noticias.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contacto.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pages/marketing.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/modal.css'%}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome-free-6.1.2-web/css/all.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/dmsans/dmsans.css'%}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{% static 'img/favicon.png'%}" type="image/x-icon">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>{% block title %}  {% endblock %} | Ricardo Martinez</title>
+</head>
+<body>
+
+    <div class="switcher">
+        <button class="switcher__btn">
+            <span class="switcher__icon-light">
+                <i class="fa-solid fa-moon switcher__icon"></i>
+            </span>
+
+            <span class="switcher__icon-dark">
+                <i class="fa-solid fa-lightbulb switcher__icon"></i>
+            </span>
+        </button>
+    </div>
+
+    <section class="menu-mobile">
+        <header class="menu-mobile__header">
+            <div class="menu-mobile__container-logo">
+                <a href="{% url 'inicio' %}" class="menu-mobile__link-logo">
+                    <img src="{% static 'img/logo1.png'%}" alt="logo" class="menu-mobile__logo">
+                </a>
+            </div>
+
+            <button class="menu-mobile__close">
+                <i class="menu-mobile__icon-close fa-solid fa-xmark"></i>
+            </button>
+        </header>
+
+        <div class="menu-mobile__body">
+            <nav class="menu-mobile__nav">
+                <ul class="menu-mobile__list">
+                    <li class="menu-mobile__item">
+                        <a href="{% url 'inicio'%}" class="menu-mobile__title">Inicio</a>
+                    </li>
+
+                    <li class="menu-mobile__item">
+                        <a href="#servicios" class="menu-mobile__title">Servicios</a>
+                    </li>
+
+                    <li class="menu-mobile__item">
+                        <a href="#" class="menu-mobile__title">Proyectos
+                            <i class="fa-solid fa-chevron-down menu-mobile__icon"></i>
+                        </a>
+                        <ul class="menu-mobile__submenu-mobile">
+                            {% for proyecto in proyectos_nav %}
+                                <li class="submenu__item">
+                                    <a href="{{proyecto.url_proyecto}}" target="_blank" class="submenu__title">{{proyecto.nombre_proyecto}} <i class="bi bi-box-arrow-in-up-right"></i></a>
+                                </li>
+                            {% endfor%}
+                        </ul>
+                    </li>
+
+                    <li class="menu-mobile__item">
+                        <a href="#" class="menu-mobile__title">Blog
+                            <i class="fa-solid fa-chevron-down menu-mobile__icon"></i>
+                        </a>
+                        <ul class="menu-mobile__submenu-mobile">
+                            {% for noticia in noticias_nav %}
+                                <li class="submenu__item">
+                                    <a href="{% url 'noticias' slug=noticia.slug_noticia %}"  class="submenu__title">{{noticia.subnombre_noticia}} 
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </a>
+                                </li>
+                            {% endfor%}
+                        </ul>
+                    </li>
+
+
+
+                    <li class="menu-mobile__item">
+                        <a href="#contacto" class="menu-mobile__title">Contacto</a>
+                    </li>
+
+                    <li class="menu-mobile__item">
+                        <a href="#footer" class="menu-mobile__title">Newsletter</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>  
+
+    <div class="layout">
+        <section class="layout__menu">
+            <div class="menu__content">
+                <div class="contenedor menu__navbar">
+                    <div class="navbar__logo">
+                        <a href="{% url 'inicio' %}" class="navbar__link-logo">
+                            <img src="{% static 'img/logo1.png'%}" alt="" class="navbar__logo-light">
+                        </a>
+                    </div>
+
+                    <div class="navbar__mobile-btn">
+                        <button class="mobile-btn__wrap">
+                            <span class="mobile-btn__line"></span>
+                            <span class="mobile-btn__line"></span>
+                            <span class="mobile-btn__line"></span>
+                        </button>
+                    </div>
+
+                    <nav class="navbar__nav">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a href="{% url 'inicio'%}" class="nav__title">Inicio
+                                    
+                                </a>
+                            </li>
+
+                            <li class="nav__item">
+                                <a href="#servicios" class="nav__title">Servicios</a>
+                            </li>
+
+                            <li class="nav__item">
+                                <a href="#proyectos" class="nav__title">Proyectos
+                                    <i class="fa-solid fa-chevron-down nav__icon"></i>
+                                </a>
+                                <ul class="nav__submenu">
+                                    {% for proyecto in proyectos_nav %}
+                                    <li class="submenu__item">
+                                        <a href="{{proyecto.url_proyecto}}" target="_blank" class="submenu__title">{{proyecto.nombre_proyecto}} <i class="bi bi-box-arrow-in-up-right"></i></a>
+                                    </li>
+                                    {% endfor%}
+
+                                </ul>
+                            </li>
+
+                            <li class="nav__item">
+                                <a href="#blog" class="nav__title">Blog
+                                    <i class="fa-solid fa-chevron-down nav__icon"></i>
+                                </a>
+                                <ul class="nav__submenu">
+                                    {% for noticia in noticias_nav %}
+                                        <li class="submenu__item">
+                                            <a href="{% url 'noticias' slug=noticia.slug_noticia %}" class="submenu__title">{{noticia.subnombre_noticia}} 
+                                                <i class="fa-solid fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                    {% endfor%}
+                                </ul>
+                            </li>
+
+                            <li class="nav__item">
+                                <a href="#contacto" class="nav__title">Contacto
+                                    
+                                </a>
+                            </li>
+
+                            <li class="nav__item">
+                                <a href="#footer" class="nav__title">Newsletter
+                                    
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        {% block content%}
+
+
+        {% endblock %}
+
+        <footer class="layout__footer" id="footer">
+            <div class="footer__container contenedor">
+                <section class="footer__top">
+                    <ul class="footer__social">
+                        <li class="social__item">
+                            <a href="#" class="social__link">
+                                <i class="fa-brands fa-facebook-f social__img"></i>
+                            </a>
+                        </li>
+
+                        <li class="social__item">
+                            <a href="#" class="social__link">
+                                <i class="fa-brands fa-twitter social__img"></i>
+                            </a>
+                        </li>
+
+                        <li class="social__item">
+                            <a href="#" class="social__link">
+                                <i class="fa-brands fa-youtube social__img"></i>
+                            </a>
+                        </li>
+
+                        <li class="social__item">
+                            <a href="#" class="social__link">
+                                <i class="fa-brands fa-linkedin social__img"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="#" class="social__link">
+                                <i class="fa-brands fa-instagram social__img"></i>
+                            </a>
+                        </li>
+
+                        <li class="social__item">
+                            <a href="#" class="social__link">
+                                <i class="fa-brands fa-pinterest-p social__img"></i>
+                            </a>
+                        </li>
+
+                        <li class="social__item">
+                            <a href="#" class="social__link">
+                                <i class="fa-brands fa-vimeo social__img"></i>
+                            </a>
+                        </li>
+
+                        <li class="social__item">
+                            <a href="#" class="social__link">
+                                <i class="fa-brands fa-behance social__img"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="footer__main">
+                    <div class="footer__fleft">
+                        <div class="left__container">
+                            <h2 class="fleft__title">
+                                Newsletter!
+                            </h2>
+                            <p class="fleft__subtitle">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis dolor laborum earum atque minima.
+                            </p>
+
+                            <form action="{% url 'newsletter'%}" class="fleft__form" method="post">
+                                {% csrf_token %}
+                                <div class="fleft__group">
+                                    <span class="fleft__mail-icon">
+                                        <i class="fa-solid fa-envelope-open-text fleft__img"></i>
+                                    </span>
+                                    <input type="email" class="fleft__form-control" placeholder="Correo Electronico" name="email" required>
+                                    <button type="submit" class="fleft__btn">Suscribete</button>
+                                    
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="footer__fright">
+                        <div class="footer__widget">
+                            <h6 class="widget__title">Servicios</h6>
+
+                            <ul class="widget__list">
+                                <li class="widget__item">
+                                    <a href="#" class="widget__link">Diseño</a>
+                                </li>
+                                <li class="widget__item">
+                                    <a href="#" class="widget__link">Desarrollo Web</a>
+                                </li>
+                                <li class="widget__item">
+                                    <a href="#" class="widget__link">Programacion</a>
+                                </li>
+                                <li class="widget__item">
+                                    <a href="#" class="widget__link">Marketing</a>
+                                </li>
+                                <li class="widget__item">
+                                    <a href="#" class="widget__link">Consultoria</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="footer__widget">
+                            <h6 class="widget__title">Recursos</h6>
+
+                            <ul class="widget__list">
+                                <li class="widget__item">
+                                    <a href="#" class="widget__link">Blog</a>
+                                </li>
+                                <li class="widget__item">
+                                    <a href="#" class="widget__link">Estudios</a>
+                                </li>
+                                <li class="widget__item">
+                                    <a href="#" class="widget__link">Portafolio</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="footer__widget">
+                            <h6 class="widget__title">Soporte</h6>
+
+                            <ul class="widget__list">
+                                <li class="widget__item">
+                                    <a href="#" class="widget__link">Contacto</a>
+                                </li>
+                                <li class="widget__item">
+                                    <a href="#" class="widget__link">Politica De Privacidad</a>
+                                </li>
+                                <li class="widget__item">
+                                    <a href="#" class="widget__link">Terminos De Uso</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                
+            </div>
+
+
+
+            <section class="footer__bottom">
+                <div class="contenedor footer__bottom-grid">
+                
+                
+                    <div class="footer__copyright">
+                        <span class="copyright__text">
+                            &copy; 2023 Todos Los Derechos Reservados
+                        </span>
+                    </div>
+
+                    <div class="footer__links">
+                        <ul class="footer__flinks">
+                            <li class="flinks__item flinks__item--separator">
+                                <a href="#" class="flinks__title">Politica De Privacidad</a>
+                            </li>
+                            <i class="fa-solid fa-circle flinks-circle"></i>
+                            <li class="flinks__item ">
+                                <a href="#" class="flinks__title">terminos De Uso</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+
+
+    <div id="miModal" class="modal">
+        <div class="modal-contenido ">
+            <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+
+            <div class="contenido__form">
+                <div class="image__form">
+                    <img src="https://res.cloudinary.com/dut4o7zjk/image/upload/v1699677316/image2_d4mkyi.gif" alt="form">
+                </div>
+                <form action="{% url 'formulario'%}" class="form__modal contenedor" method="post">
+                    {% csrf_token %}
+                    <p class="reviews__description marketing__header-description form__modal-recomendacion">
+                        * El asterisco indica que es obligatorio
+                    </p>
+                    {{form.as_ul}}
+                    <div class="g-recaptcha" data-sitekey="6Ld1CRwnAAAAALioGvWnSZV6G_45N502rqXyuyB2"></div>
+                    <button type="submit" class="fleft__btn form__modal-boton">
+                        Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript" src="{% static 'js/menu-mobile.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/navbar-fixed.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/dark.js'%}"></script>
+    <script src="{% static 'js/toast.js'%}"></script>
+    <script> AOS.init(); </script>
+    <script src="{% static 'js/modal.js'%}"></script>
+
+
+    <script>
+        let cssUrl = "{% static 'css/dark.css' %}";
+        let icon1 = "{% static 'img/logo1.png'%}";
+        let icon2 = "{% static 'img/logo2.png'%}";
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript" defer>
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/651d0dc710c0b25724885bb4/1hbsnrl98';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->  
+    
+</body>
+
+
+</html>

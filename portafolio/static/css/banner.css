@@ -1,0 +1,249 @@
+/** banner **/
+
+.layout__banner{
+    position: relative;
+    z-index: 10;
+    min-height: 50rem;
+    max-height: 50rem;
+    padding-right: 0;
+    /* padding-left: 10rem; */
+    padding-top: 7.5rem;
+    padding-bottom: 22rem;
+    border-radius: 6rem;
+    overflow: hidden;
+    margin: 0 3rem;
+    background-color: var(--color-banner);
+    background: linear-gradient(to right, rgb(0 0 0 / 60%), rgb(0 17 255 / 33%)), 
+    url(https://res.cloudinary.com/dut4o7zjk/image/upload/v1704430719/fahrul-razi-BR6lrzCPYPk-unsplash_sdsnqx.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    filter: saturate(1.3);
+    animation: moverFondo 50s linear infinite;
+}
+@keyframes moverFondo {
+    0%, 100% {
+      background-position-y: 0%; /* Posición inicial del fondo en la parte inferior */
+    }
+    50% {
+      background-position-y: 50%; /* Posición final del fondo en la parte superior */
+    }
+  }
+.banner__grid{
+    position: relative;
+    margin: 4rem 5rem;
+}
+.banner__content{
+    position: relative;
+    /* display: inline-block; */
+    width: 100%;
+    /* padding: 0rem 1.5rem; */
+    z-index: 3;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner__video{
+    width: 52rem;
+    display: block;
+    margin-top: -2rem;
+}
+
+.banner__video iframe{
+    display: block;
+    border-radius: 1rem;
+}
+
+.banner__title{
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+    margin-top: -2rem;
+}
+
+.banner__subtitle{
+    margin-bottom: 3rem;
+    color: var(--white);
+    font-weight: 100;
+}
+
+/* .banner__btn__content .banner__btn:first-of-type{
+    background-color: var(--color-primary);
+    color: var(--white);
+}  */
+
+.banner__btn{
+    /* display: inline-block; */
+    background-color: var(--color-secondary);
+    color: var(--white);
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem 6rem;
+    border-radius: 1rem;
+    box-shadow: 0px 44px 84px -24px var(--color-primary);
+    /* font-weight: bold; */
+    font-size: 1.38rem;
+    text-transform: uppercase;
+    transition: all 300ms ease;
+    margin-right: 3rem;
+    border: 3px solid var(--color-secondary);
+}
+.banner__btn:hover{
+    background-color: transparent;
+    border: 3px solid var(--white);
+    color: var(--white);
+}
+
+
+/** shapes **/
+
+.shapes__item{
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    display: none;
+}
+
+.shapes__item--shape1{
+    top: 0;
+    right: 0;
+    text-align: right;
+    animation: showRight;
+    animation-duration: 1s;
+}
+
+.shapes__item--shape2{
+    bottom: -22px;
+    left: 0;
+    animation: showLeft;
+    animation-duration: 1s;
+}
+
+.shapes__item--shape3{
+    top: 20%;
+    left: 50%;
+    animation: moveShape3 infinite;
+    animation-duration: 35s;
+}
+
+.shapes__item--shape4{
+    bottom: 20rem;
+    left: 45%;
+    animation: moveShape3 infinite;
+    animation-duration: 60s;
+}
+.shapes__item--shape4 .shapes__img{
+    opacity: 0.5;
+    width:7.5rem;
+    animation: moveShape5 infinite;
+    animation-duration: 35s;
+}
+
+.shapes__item--shape5{
+    bottom: 2rem;
+    left: 5%;
+    opacity: 0.7;
+    animation: moveShape4 infinite;
+    animation-duration: 60s;
+}
+
+.shapes__item--shape6{
+    bottom: 30rem;
+    left: 65%;
+    animation: moveShape6 infinite;
+    animation-duration: 35s;
+}
+
+.shapes__item--shape7{
+    top: 0;
+    right: 10rem;
+    z-index: 1;
+    animation: showTop;
+    animation-duration: 1s;
+}
+
+/* animaciones */
+
+@keyframes showRight{
+    0%{
+        transform: translateX(50%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes showLeft{
+    0%{
+        transform: translateX(-50%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes showTop{
+    0%{
+        transform: translateY(-50%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+@keyframes moveShape3{
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    40%{
+        transform: translateX(50px) translateY(-100px);
+    }
+    75%{
+        transform: translateX(500px);
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
+}
+@keyframes moveShape4{
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    40%{
+        transform: translateX(500px) translateY(-100px);
+    }
+    75%{
+        transform: translateX(300px);
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
+}
+@keyframes moveShape5{
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    40%{
+        transform: translateZ(50%);
+    }
+    75%{
+        transform: translateX(-300px) translateY(-100px);
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
+}
+@keyframes moveShape6{
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    40%{
+        transform: translateZ(50%);
+    }
+    75%{
+        transform: translateX(300px) translateY(100px);
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
+}

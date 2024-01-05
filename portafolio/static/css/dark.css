@@ -1,0 +1,291 @@
+/* variables */
+:root{
+     --color-text-body: #525260;
+     --color-primary: #7870F6;
+     --color-secondary: #7870F6;
+     --color-stats: #a8a7ff;
+     --color-banner: #7870F6;
+     --black: #fff;
+     --white: #000;
+     --red: #eb7560;
+     --yellow: #dbac00;
+     --fuente-principal: 'DM sans';
+}
+
+.submenu__title{
+    color: #fff;
+}
+
+.nav__submenu{
+    background-color: #222;
+}
+
+.layout__banner{
+    background: linear-gradient(to right, rgb(0 0 0 / 60%), rgba(0, 17, 255, 0.13)), 
+    url(https://res.cloudinary.com/dut4o7zjk/image/upload/v1704430719/fahrul-razi-BR6lrzCPYPk-unsplash_sdsnqx.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    border: 2px solid var(--black);
+    animation: moverFondo 50s linear infinite;
+}
+
+.banner__title{
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.banner__subtitle{
+    margin-bottom: 3rem;
+    color: #fff;
+    font-weight: 100;
+}
+
+.banner__btn{
+    color: #fff;
+}
+
+.banner__btn:hover{
+    background-color: transparent;
+    border: 3px solid #fff;
+    color: #fff;
+}
+
+.services__subtitle{
+    color: var(--color-secondary);
+}
+
+.reviews__description{
+    color: #fff;
+}
+
+
+.services__service{
+    background-color: #222;
+}
+
+.service_-content .project__tags{
+    color: #a9a9a9;
+}
+
+.service__more:hover,
+.service__link:hover{
+    color: var(--color-secondary);
+}
+
+
+.service__more:hover::before{
+    background-color: var(--color-secondary);
+}
+
+.layout__projects{
+    background-color: #222;
+}
+
+.projects__subtitle{
+    color: var(--color-secondary);
+}
+
+.categories__item{
+    color: #fff;
+    border-color: #222;
+}
+
+.categories__item--active, .categories__item:hover{
+    border-bottom: 3px solid var(--color-secondary);
+}
+
+.project__title .new__description{
+    color: #fff;
+}
+
+.stats__title{
+    color: #fff;
+}
+
+.stats__description{
+    color: #fff;
+}
+
+.stat__title{
+    color: #fff;
+}
+
+
+.reviews__subtitle{
+    color: var(--color-secondary);
+}
+
+.review__description{
+    color: #fff;
+}
+
+.author__name{
+    color: #fff;
+}
+
+
+.review__img{
+    filter: invert(0.5);
+}
+
+.layouts__news{
+    background-color: #222;
+}
+
+.news__subtitle{
+    color: var(--color-secondary);
+}
+
+.new__title a{
+    color: #fff;
+}
+
+.new__description{
+    color: #c4c4c4;
+}
+
+.new__more{
+    color: #fff;
+}
+
+.contact__title{
+    color: #fff;
+}
+
+.contact__description{
+    color: #fff;
+}
+
+.contact__btn{
+    color: #fff;
+}
+.contact__btn:hover{
+    color: #fff;
+}
+
+.layout__footer{
+    background-color: #000;
+}
+
+.fleft__title,
+.fleft__subtitle,
+.footer__widget,
+.widget__item a,
+.copyright__text,
+.flinks__title,
+.flinks-circle,
+.social__img:hover,
+.switcher__icon-light{
+    color: #fff;
+}
+
+.fleft__group{
+    background-color: #fff;
+}
+
+.fleft__btn{
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.footer__bottom{
+    background-color: #000;
+}
+
+.nav__title::before,
+.submenu__title::after{
+    background-color: #fff;
+}
+
+.submenu__title:hover{
+    color: #fff;
+}
+
+.mobile-btn__line{
+    background-color: #fff;
+}
+
+.mobile-btn__wrap{
+    background-color: var(--color-secondary);
+}
+
+.menu-mobile__close,
+.menu-mobile__title,
+.submenu-mobile__title{
+    color: #fff;
+}
+
+.menu-mobile__item,
+.menu-mobile__header{
+    border-bottom: 1px solid #4a4a4a;
+}
+.project__link-title:hover{
+    color: var(--color-secondary);
+}
+
+.new__title a:hover{
+    color: var(--color-secondary);
+}
+.news__nav-blog{
+    background-color: #222 !important;
+}
+.layout__reviews-dark{
+    background-color: #222;
+}
+
+.blog__item{
+    border-bottom: 1px solid #555;
+}
+
+.post__item{
+    border-bottom: 1px solid #555;
+}
+
+.news__new-dark{
+    background-color: #222;
+}
+
+.fleft__group-blog{
+    background-color: black;
+}
+
+.fleft__form-control-blog{
+    background-color: black;
+    color: var(--black);
+}
+
+.swiper-pagination-bullet{
+    background-color: white;
+}
+
+.review__author{
+    background-color: #222;
+}
+
+.reviews__review{
+    background-color: #222;
+}
+
+
+.grid__noticia pre{
+    background-color: #222;
+}
+
+.grid__noticia pre code{
+    font-size: 1.4rem;
+    color: #e5e5e5;
+}
+
+.button__formulario-modal{
+    color: var(--black);
+}
+
+.form__modal li input[type="text"],
+.form__modal li select,
+.form__modal li textarea{
+    background-color: #222;
+    border: 3px solid #4e4e4e;
+}

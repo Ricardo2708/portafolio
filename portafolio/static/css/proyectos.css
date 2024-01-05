@@ -1,0 +1,134 @@
+.layout__projects{
+    position: relative;
+    background-color: #f7f7f7;
+    padding: 6rem 8rem;
+    padding-bottom: 8.5rem;
+    z-index: 10;
+
+    margin: 0 3rem;
+    border-radius: 6rem;
+    margin-bottom: 5rem;
+}
+
+/* .projects__header{
+    margin-bottom: 4rem;
+} */
+
+.projects__subtitle{
+    color: var(--color-banner);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    /* text-align: right; */
+    text-transform: capitalize;
+}
+
+.projects__title{
+    color: var(--black);
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    /* text-align: right; */
+    text-transform: capitalize;
+}
+
+.projects__categories{
+    margin-bottom: 3.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 7rem;
+}
+
+.categories__item{
+    position: relative;
+    color: var(--color-text-body);
+    font-size: 1.5rem;
+    padding: 0.8rem 0;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 200ms ease;
+    border-bottom: 3px solid #f9f9f9;
+}
+
+.categories__item--active,
+.categories__item:hover{
+    border-bottom: 3px solid var(--color-banner);
+}
+
+.projects__all{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 5rem;
+    margin-top: 0rem;
+}
+
+.project__container-img{
+    border-radius: 0.5rem 0.5rem  0 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.project__img{
+    min-height: 21.5rem;
+    max-height: 21.5rem;
+    object-fit: cover;
+    filter: brightness(0.85);
+    transition: all 800ms ease-in-out;
+}
+
+.project__link-img{
+    display: flex;
+}
+
+
+.projects__project:hover .project__img{
+    transform: scale(1.5);
+}
+
+.project__content{
+    padding: 3rem 2.5rem;
+    padding-top: 2.5rem;
+    background-color: var(--white);
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.project__link-title{
+    font-size: 1.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--black);
+    transition: all 300ms ease-in-out;
+    text-decoration-color: var(--black);
+    letter-spacing: -0.5px;
+}
+
+.project__link-title:hover{
+    color: var(--color-banner);
+    text-decoration-color: var(--color-banner);
+}
+
+.project__tags{
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: #a9a9a9;
+    margin-bottom: 1rem;
+}
+
+.project__tags i{
+    margin-right: .5rem;
+    margin-top: .5rem;
+}
+
+.project__title{
+    font-size: 1.2rem;
+}
+
+
+.project__title .new__description{
+    font-size: 1.2rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-transform: none;
+}

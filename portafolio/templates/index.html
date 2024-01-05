@@ -1,0 +1,666 @@
+{% extends 'layouts/layout.html' %}
+{% load static %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+
+{%for message in messages %}
+    {%if "successForm" in message.tags %}
+        <script>
+            Swal.fire({
+            title: "{{message}}",
+            text: "nos pondremos en contacto",
+            icon: "success"
+            });
+        </script>
+    {%endif%}
+
+    {%if "newsletterForm" in message.tags %}
+        <script>
+            Swal.fire({
+            title: "{{message}}",
+            text: "Recibiras un correo con nuestras publicaciones",
+            icon: "success"
+            });
+        </script>
+    {%endif%}
+
+
+    {%if "errorForm" in message.tags %}
+        <script>
+            Swal.fire({
+            title: "{{message}}",
+            text: "Valida el recaptcha para continuar",
+            icon: "error"
+            });
+        </script>
+    {%endif%}
+{% endfor %}
+
+    <section class="layout__banner">
+        <div class="banner__grid">
+            <div class="banner__content contenedor">
+                <div class="banner__header">
+                    <h1 class="banner__title" data-aos="fade-right">Ricardo Martinez</h1>
+                    <p class="banner__subtitle">Software Developer | Experto en JavaScript, Python, PHP, Java</p>
+                    <div class="banner__btn__content">
+                        <a href="#proyectos" class="banner__btn">Proyectos
+                            <i class="fa-solid fa-chevron-right new__icon"></i>
+                        </a>
+                        <a href="#contacto" class="banner__btn">Contacto
+                            <i class="fa-solid fa-chevron-right new__icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <article class="banner__video">
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/B8OlRdYwNlA?si=TRgoJtpR4T5UP_mG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </article> 
+            </div>
+        </div>
+
+        <div class="banner__shapes">
+            <ul class="shapes__list">
+                <li class="shapes__item shapes__item--shape1">
+                    <div class="shapes__container">
+                        <img src="{% static 'img/banner-shape-1.png'%}" class="shapes__img" alt="banner">
+                    </div>
+                </li>
+
+                <li class="shapes__item shapes__item--shape2">
+                    <div class="shapes__container">
+                        <img src="{% static 'img/banner-shape-2.png'%}" class="shapes__img" alt="banner">
+                    </div>
+                </li>
+
+                <li class="shapes__item shapes__item--shape3">
+                    <div class="shapes__container">
+                        <img src="{% static 'img/bubble-16.png'%}" class="shapes__img" alt="banner">
+                    </div>
+                </li>
+
+                <li class="shapes__item shapes__item--shape4">
+                    <div class="shapes__container">
+                        <img src="{% static 'img/bubble-15.png'%}" class="shapes__img" alt="banner">
+                    </div>
+                </li>
+
+                <li class="shapes__item shapes__item--shape5">
+                    <div class="shapes__container">
+                        <img src="{% static 'img/bubble-14.png'%}" class="shapes__img" alt="banner">
+                    </div>
+                </li>
+
+                <li class="shapes__item shapes__item--shape6">
+                    <div class="shapes__container">
+                        <img src="{% static 'img/bubble-16.png'%}" class="shapes__img" alt="banner">
+                    </div>
+                </li>
+
+
+                <li class="shapes__item shapes__item--shape7">
+                    <div class="shapes__container">
+                        <img src="{% static 'img/bubble-26.png'%}" class="shapes__img" alt="banner">
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </section>        
+
+    <section class="layout__services" id="servicios">
+        <div class="services__grid contenedor">
+
+            <div class="services__header">
+                <p class="services__subtitle">
+                    Servicios & Mas
+                </p>
+
+                <h2 class="services__title">Nuestros Servicios</h2>
+                <p class="reviews__description">
+                    nuestros clientes siempre salen satisfechos con sus web's y apps
+                </p>
+            </div>
+
+            <div class="services__list">
+           
+
+                <article class="services__service services__service--top">
+                    <div class="service__container-img">
+                        <img src="{% static 'img/telefono.png'%}" class="service__img" alt="service">
+                    </div>
+                    <div class="service_-content">
+                        <h3 class="service__title">
+                            <a href="#" class="service__link">Desarrollo Web</a>
+                        </h3>
+                        <div class="project__tags">
+                            <span class="project__tag">JavaScript,</span>
+                            <span class="project__tag">Python,</span>
+                            <span class="project__tag">PHP</span>
+                        </div>
+                        <p class="service__description">
+                            las aplicaciones web y moviles a medida..
+                        </p>
+                        <a href="#" class="service__more">Consultar
+                            <i class="bi bi-cart-plus"></i>
+                        </a>
+                    </div>
+                </article>
+    
+                <article class="services__service services__service--middle">
+                    <div class="service__container-img">
+                        <img src="{% static 'img/busqueda.png'%}" class="service__img" alt="service">
+                    </div>
+                    <div class="service_-content">
+                        <h3 class="service__title">
+                            <a href="#" class="service__link">Diseño & Mas</a>
+                        </h3>
+                        <div class="project__tags">
+                            <span class="project__tag">Photoshop,</span>
+                            <span class="project__tag">XD,</span>
+                            <span class="project__tag">Illustrator</span>
+                        </div>
+                        <p class="service__description">
+                            desde una web, una app, hasta un logotipo..
+                        </p>
+                        <a href="#" class="service__more">Consultar
+                            <i class="bi bi-cart-plus"></i>
+                        </a>
+                    </div>
+                </article>
+    
+                <article class="services__service services__service--bottom">
+                    <div class="service__container-img">
+                        <img src="{% static 'img/paquete.png'%}" class="service__img" alt="service">
+                    </div>
+                    <div class="service_-content">
+                        <h3 class="service__title">
+                            <a href="#" class="service__link">Marketing Online</a>
+                        </h3>
+                        <div class="project__tags">
+                            <span class="project__tag">Analytics,</span>
+                            <span class="project__tag">WordPress,</span>
+                        </div>
+                        <p class="service__description">
+                            le damos visibilidad a tu proyecto digital
+                        </p>
+                        <a href="#" class="service__more">Consultar
+                            <i class="bi bi-cart-plus"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+
+        <ul class="services__service-shapes">
+            <li class="service-shapes__item service-shapes--shape1">
+                <div class="service-shape__container">
+                    <img src="{% static 'img/circle-3.png'%}" class="service-shapes-img" alt="">
+                </div>
+            </li>
+
+
+            <li class="service-shapes__item service-shapes--shape3">
+                <div class="service-shape__container">
+                    <img src="{% static 'img/bubble-13.png'%}" class="service-shapes-img" alt="">
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="layout__projects" id="proyectos">
+        <div class="projects__grid contenedor">
+            <div class="projects__header">
+                <p class="projects__subtitle">
+                    Asignaciones & Proyectos
+                </p>
+                <h2 class="projects__title">
+                    nuestros
+                    trabajos
+                </h2>
+                <p class="reviews__description">
+                    nuestros clientes siempre salen satisfechos con sus web's y apps
+                </p>
+            </div>
+
+            <ul class="projects__categories">
+                <li class="categories__item categories__item--active">
+                    Destacados
+                </li>
+
+                <li class="categories__item">
+                    Desarrollo Web
+                </li>
+
+                <li class="categories__item">
+                    Diseño Web
+                </li>
+
+                <li class="categories__item">
+                    Desarrollo Movil
+                </li>
+            </ul>
+
+            <div class="swiper2">
+                <div class="swiper-wrapper">
+
+                    {% for proyecto in proyectos %}
+                        <div class="swiper-slide">
+                            <article class="projects__project">
+                                <div class="project__container-img">
+                                    <a href="{{proyecto.url_proyecto}}" class="project__link-img" target="_blank">
+                                        {% if proyecto.image_proyecto %}
+                                            <img src="{{ proyecto.image_proyecto.url }}" class="project__img" alt="{{ proyecto.nombre_proyecto }}">
+                                        {% endif %}
+                                    </a>
+                                </div>
+
+                                <div class="project__content">
+                                    <h3 class="project__title">
+                                        <a href="{{proyecto.url_proyecto}}" target="_blank" class="project__link-title">
+                                            {{proyecto.nombre_proyecto}}
+                                        </a>
+                                        <div class="project__tags">
+
+                                            {% for tag in proyecto.tags_proyecto.all %}                                       
+                                                <span class="project__tag"><i class="fa-brands fa-{{tag.nombre_lenguaje}}"></i></span>
+                                            {% endfor %}
+                                        </div>
+                                        <p class="new__description">
+                                            {{proyecto.descripcion_proyecto}}
+                                        </p>
+                                        <a href="{{proyecto.url_github}}" class="service__more link__github">GitHub
+                                            <i class="bi bi-github"></i>
+                                        </a>
+                                        <a href="{{proyecto.url_proyecto}}" class="new__more" target="_blank">
+                                            Leer Mas 
+                                            <i class="fa-solid fa-chevron-right new__icon"></i>
+                                        </a>
+                                    </h3>
+                                </div>
+                            </article>
+                        </div>
+                    {% endfor%}
+                </div>
+
+                <div class="swiper-pagination"></div>
+
+                  <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="layout__stats">
+        <div class="stats__container contenedor">
+            <header class="stats__header">
+                <h4 class="stats_-subtitle">Agencia De Diseño Y Desarrollo</h4>
+                <h2 class="stats__title">Estadisticas de trabajos realizados</h2>
+                <p class="stats__description">
+                    aqui puedes ver un resumen de nuestras estadisticas en estos años de trabajo
+                </p>
+            </header>
+
+            <div class="stats__progress">
+                <article class="stats__stat" data-aos="fade-up" data-aos-delay="0">
+                    <div class="stat__icon">
+                        <i class="fa-solid fa-bolt stat__icon-logo"></i>
+                    </div>
+                    <span class="stat__count">
+                        +15
+                    </span>
+
+                    <h6 class="stat__title">
+                        Años Activos
+                    </h6>
+                </article>
+
+                <article class="stats__stat" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat__icon">
+                        <i class="fa-solid fa-calendar-days stat__icon-logo"></i>
+                    </div>
+                    <span class="stat__count">
+                        +20
+                    </span>
+
+                    <h6 class="stat__title">
+                        proyectos realizados
+                    </h6>
+                </article>
+
+                <article class="stats__stat" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat__icon">
+                        <i class="fa-solid fa-users stat__icon-logo"></i>
+                    </div>
+                    <span class="stat__count">
+                        +10
+                    </span>
+
+                    <h6 class="stat__title">
+                        profesionales
+                    </h6>
+                </article>
+
+                <article class="stats__stat" data-aos="fade-up" data-aos-delay="600">
+                    <div class="stat__icon">
+                        <i class="fa-brands fa-microsoft stat__icon-logo"></i>
+                    </div>
+                    <span class="stat__count">
+                        +50
+                    </span>
+
+                    <h6 class="stat__title">
+                        Clientes Satisfechos
+                    </h6>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="layout__reviews">
+        <div class="reviews__grid contenedor">
+            <header class="reviews__header">
+                <h4 class="reviews__subtitle">
+                    Testimoniales
+                </h4>
+                <h2 class="reviews__title"> ¿Que dicen nuestros clientes?</h2>
+                <p class="reviews__description">
+                    nuestros clientes siempre salen satisfechos con sus web's y apps
+                </p>
+            </header>
+
+            <div class="reviews__container">
+                <article class="reviews__review">
+                    <span class="review__company">
+                        <img src="{% static 'img/logo1.webp'%}" class="review__img review__img-personal" alt="google">
+                    </span>
+
+                    <p class="review__description">
+                        Persona Super Responsable, Dedicado En Su Trabajo, Siempre Dispuesto A Ayudar A Su Grupo De Trabajo.
+                        Demuestra Ser Una Persona Leal, Honesta, Y Trabajadora, Enfocado Siempre En Sus Objetivos,
+                        Y Esmerarse Por Cumplirlo.
+                    </p>
+
+                    <div class="review__author">
+                        <div class="author__container-img">
+                            <img src="https://res.cloudinary.com/dut4o7zjk/image/upload/v1699505813/testimonial1_uuvow5.jpg" class="author__img" alt="foto">
+                        </div>
+
+                        <div class="author__content">
+                            <span class="author__name">
+                                Iris Solórzano
+                            </span>
+
+                            <span class="author__description">
+                                Human Resources (RRHH)
+                            </span>
+
+                            <a href="{{proyecto.url_github}}" class="service__more link__github">linkedin
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="reviews__review">
+                    <span class="review__company">
+                        <img src="{% static 'img/workana.png'%}" class="review__img review__img-banco" alt="google">
+                    </span>
+
+                    <p class="review__description">
+                        persona super Responsable, dedicado en su trabajo, siempre dispuesto a ayudar a su grupo de trabajo. 
+                        demuestra ser una persona leal, honesta, y trabajadora, enfocado siempre en sus objetivos, y esmerarse por cumplirlo.
+                    </p>
+
+                    <div class="review__author">
+                        <div class="author__container-img">
+                            <img src="https://media.licdn.com/dms/image/D4E03AQHLNUMUCpc0lA/profile-displayphoto-shrink_100_100/0/1696969927256?e=1704326400&v=beta&t=9dvSY7RdMHUHjE_aHGwkfe3tCBI10EY5IcwVIJkaJdk" class="author__img" alt="foto">
+                        </div>
+
+                        <div class="author__content">
+                            <span class="author__name">
+                                Marisela Mejia
+                            </span>
+
+                            <span class="author__description">
+                                Business Administration (BBA)
+                            </span>
+
+                            <a href="{{proyecto.url_github}}" class="service__more link__github">linkedin
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="reviews__review">
+                    <span class="review__company">
+                        <img src="{% static 'img/logo1.webp'%}" class="review__img review__img-personal" alt="google">
+                    </span>
+
+                    <p class="review__description">
+                        Persona Super Responsable, Dedicado En Su Trabajo, Siempre Dispuesto A Ayudar A Su Grupo De Trabajo.
+                        Demuestra Ser Una Persona Leal, Honesta, Y Trabajadora, Enfocado Siempre En Sus Objetivos,
+                        Y Esmerarse Por Cumplirlo.
+                    </p>
+
+                    <div class="review__author">
+                        <div class="author__container-img">
+                            <img src="https://res.cloudinary.com/dut4o7zjk/image/upload/v1699506518/testimonial2_yal8jw.jpg" class="author__img" alt="foto">
+                        </div>
+
+                        <div class="author__content">
+                            <span class="author__name">
+                                Enot Rodriguez
+                            </span>
+
+                            <span class="author__description">
+                                IT Service Manager (ITSM)
+                            </span>
+
+                            <a href="{{proyecto.url_github}}" class="service__more link__github">linkedin
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <ul class="reviews__review-shapes">
+
+            <li class="review-shapes__item service-shapes--shape1">
+                <div class="review-shape__container">
+                    <img src="{% static 'img/circle-2.png'%}" class="review-shapes-img" alt="">
+                </div>
+            </li>
+            
+        </ul>
+    </section>
+
+    <section class="layouts__news" id="blog">
+        <div class="news__container contenedor">
+            <header class="news__header">
+                <h4 class="news__subtitle">¿que esta pasando?</h4>
+                <h2 class="news__title">Ultimas Noticias</h2>
+                <p class="reviews__description">
+                    nuestros clientes siempre salen satisfechos con sus web's y apps
+                </p>
+            </header>
+
+            <ul class="projects__categories">
+                <li class="categories__item categories__item--active">
+                    Destacados
+                </li>
+
+                <li class="categories__item">
+                    Desarrollo Web
+                </li>
+
+                <li class="categories__item">
+                    Diseño Web
+                </li>
+
+                <li class="categories__item">
+                    Desarrollo Movil
+                </li>
+            </ul>
+
+            <div class="swiper3">
+                <div class="swiper-wrapper">
+                    {% for noticia in noticias %}
+                        <div class="swiper-slide">
+                            <article class="news__new">
+                                <div class="new__container-img">
+                                    <img src="{{ noticia.image_noticia.url }}" alt="news" class="new__img">
+                                </div>
+
+                                <div class="new__content">
+                                    <p class="new__subtitle">{{noticia.subnombre_noticia}}</p>
+
+                                    <h3 class="new__title">
+                                        <a href="{% url 'noticias' slug=noticia.slug_noticia %}" class="new__link">
+                                            "{{noticia.nombre_noticia}}"
+                                        </a>
+                                    </h3>
+
+                                    <p class="new__subtitle new__subtitle-date">{{noticia.created_at |date:"M d.  Y"}}</p>
+
+                                    <a href="{{proyecto.url_github}}" class="service__more link__github news__link__github">
+                                        Compartir <i class="bi bi-share"></i>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="swiper-pagination3"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar3"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="layout__reviews" id="contacto">
+        <div class="reviews__grid contenedor">
+            <div class="marketing__grid">
+                <section class="marketing__header">
+                    <h4 class="reviews__subtitle">
+                        Nuevas Estrategias
+                    </h4>
+                    <h3 class="marketing__header-title">
+                        Metodos & Gestiones +
+                    </h3>
+                    <p class="reviews__description marketing__header-description">
+                        nuestros clientes siempre salen satisfechos con sus web's 
+                    </p>
+                </section>
+    
+                <section class="marketing__description">
+                    <p class="marketing__description-text">
+                        Desarrollador web full-stack,
+                        con mas de 4 años de experiencia tanto laborales como profesionales, 
+                        e trabajado con diversas empresas, clientes donde e aplicado mis 
+                        conocimientos y habilidades de desarrollo con diferentes metodologias 
+                        para hacer un trabajo limpio y calidad.
+                    </p>
+                    
+                </section>
+            </div>
+
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1559526324-c1f275fbfa32?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1616469832301-ffaeadc68cf3?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1620287341056-49a2f1ab2fdc?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=2069&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1591608516485-a1a53df39498?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1622675363311-3e1904dc1885?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+                    
+                </div>
+            </div>            
+        </div>
+
+        <ul class="reviews__review-shapes">
+
+            <li class="review-shapes__item service-shapes--shape1 service-shapes-contact">
+                <div class="review-shape__container">
+                    <img src="{% static 'img/circle-3.png'%}" class="review-shapes-img" alt="">
+                </div>
+            </li>
+            
+        </ul>
+    </section>
+
+    <section class="layout__contact" > 
+        <div class="contact__container contenedor">
+            <header class="contact__header">
+                <h4 class="contact__subtitle"  data-aos="fade-up" data-aos-delay="0">Cotizaciones & Contacto</h4>
+                <h2 class="contact__title"  data-aos="fade-up" data-aos-delay="200">¿Necesitas Un Proyecto?</h2>
+                <p class="contact__description"  data-aos="fade-up" data-aos-delay="400">
+                    Convertimos tus ideas en el mejor Software
+                </p>
+                
+                <div class="banner__btn__content modal__btn__content">
+                    <a href="https://www.linkedin.com/in/ricardo-martinez-b3b15622a/" target="_blank" class="contact__btn">Mi linkedIn <i class="bi bi-box-arrow-in-up-right"></i></a>
+                    <button class="button__formulario-modal" id="mostrarModal">
+                        Formulario
+                        <i class="bi bi-back"></i>
+                    </button>
+                </div>
+                
+            </header>
+
+        </div>
+
+    </section>
+
+    
+{% endblock %}

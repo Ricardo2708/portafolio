@@ -1,0 +1,91 @@
+.layout__stats{
+    border-radius: 6rem;
+    overflow: hidden;
+    margin: 0 3rem;
+    
+    padding: 2rem 0;
+    padding-top: 5rem;
+    background-color: var(--black);
+    position: relative;
+    z-index: 11;
+    background: linear-gradient(to bottom, rgb(0 0 0 / 60%), rgb(0 6 88 / 55%)), 
+    url(https://res.cloudinary.com/dut4o7zjk/image/upload/v1704433378/joshua-aragon-azft6PuI3Ug-unsplash_av4fcl.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.stats__container{
+    padding: 4rem 0;
+    padding-top: 2rem;
+}
+.stats__header{
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.stats_-subtitle{
+    color: var(--color-stats);
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.stats__title{
+    color: var(--white);
+    padding: 2rem 0;
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.stats__description{
+    color: var(--white);
+    font-size: 1.4rem;
+}
+
+.stats__progress{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.stats__stat{
+    width: 25%;
+    text-align: center;
+    padding: 2rem 3rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+.stat__icon{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.stat__icon-img{
+    width: 20%;
+}
+
+.stat__count{
+    display: inline-block;
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-stats);
+    margin-bottom: 1.3rem;
+}
+
+.stat__title{
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.stat__icon-logo{
+    display: none !important;
+    color: var(--white);
+    font-size: 4rem;
+}

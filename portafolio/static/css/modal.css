@@ -1,0 +1,163 @@
+/* styles modal **/
+.modal {
+    display: none; /* Por defecto, el modal está oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro translúcido */
+    z-index: 1000000000;
+    opacity: 0; /* Opacidad inicial del modal */
+    transition: opacity 0.3s ease;
+}
+  
+.modal-contenido {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    padding: 30px;
+    width: 60%;
+    border-radius: 1rem;
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+  
+.cerrar-modal {
+    color: #aaa;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+  
+.cerrar-modal:hover,
+.cerrar-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button__formulario-modal{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding: 1rem 5.5rem;
+    background-color: var(--color-secondary);
+    color: var(--white);
+    border-radius: 1rem;
+    font-size: 1.38rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 300ms ease-in-out;
+    text-transform: uppercase;
+    border: 3px solid var(--color-secondary);
+}
+
+.button__formulario-modal:hover{
+    background-color: transparent;
+}
+
+.button__formulario-modal i{
+    margin-left: 0.3rem;
+}
+
+.modal__btn__content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.modal__btn__content .contact__btn:last-of-type{
+    margin-left: 0;
+}
+
+/* styles form modal **/
+
+.contenido__form{
+    display: flex;
+    gap: 0rem;
+}
+
+.image__form{
+    width: 100%;
+}
+
+.image__form img{
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    filter: invert(1);
+}
+
+.form__modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 3rem;
+}
+
+.form__modal li{
+    width: 100%;
+    list-style: none;
+}
+
+.form__modal li input[type="text"],
+.form__modal li select,
+.form__modal li textarea{
+    font-size: 1.4rem;
+    border-radius: 10px;
+    padding: 1.2rem;
+    padding-right: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border: 2px solid #e8e8e8;
+    color: var(--black);
+}
+
+.form__modal li textarea{
+    height: 10.2rem;
+    resize: none;
+}
+
+.form__modal-boton{
+    font-size: 1.4rem;
+    width: 100%;
+    padding: 1rem 6rem;
+    border-radius: 10px;
+    border: 2px solid var(--color-primary);
+}
+
+.form__modal-boton:hover{
+    background-color: transparent;
+    color: var(--color-secondary);
+}
+
+.form__modal-boton i{
+    margin-left: .5rem;
+}
+
+.form__modal-recomendacion{
+    margin: -5px;
+    font-size: 1.4rem;
+    color: var(--red);
+    font-weight: 500;
+}

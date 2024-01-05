@@ -1,0 +1,74 @@
+{% extends 'layouts/custom/layout.html' %}
+{% load static %}
+
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+
+<style>
+.layout__contact-noticia{
+    margin: 3rem;
+    margin-top: 0;
+    border-radius: 3rem;
+}
+.layout__contact-noticia::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 62rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--black);
+    z-index: -1;
+    background: linear-gradient(to right,rgba(0, 0, 0, 0.7), rgba(35, 35, 35, 0.5)), 
+    url('{{ noticia.image_noticia.url }}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+</style>
+
+<section class="layout__contact layout__contact-noticia"> 
+    <div class="contact__container contenedor">
+        <header class="contact__header">
+            <p class="noticia__header-date">{{noticia.created_at |date:"M d.  Y"}}</p>
+            <h2 class="contact__title contact__title-diseño">{{noticia.nombre_noticia}}</h2>
+            <p class="noticia__header-autor">Publicado Por: {{noticia.autor_noticia}}</p>
+        </header>
+    </div>
+</section>
+
+<section class="layout__noticia">
+    <div class="contenedor grid__noticia">
+
+
+        <div class="noticia__contenido">
+            <article class="noticia__social">
+                <ul class="noticia__social__list">
+                    <li class="noticia__social-item">
+                        <i class="bi bi-twitter"></i>
+                    </li>
+                    <li class="noticia__social-item">
+                        <i class="bi bi-linkedin"></i>
+                    </li>
+                    <li class="noticia__social-item">
+                        <i class="bi bi-facebook"></i>
+                    </li>
+                    <li class="noticia__social-item">
+                        <i class="bi bi-link"></i>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="noticia__ckeditor">
+                {{noticia.text | safe }}
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

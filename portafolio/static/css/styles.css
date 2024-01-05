@@ -1,0 +1,181 @@
+/* variables */
+:root{
+     --color-text-body: #525260;
+     --color-primary: #7870F6;
+     --color-secondary: #7870F6;
+     --color-stats: #a8a7ff;
+     --color-banner: #7870F6;
+     --black: #000;
+     --white: #fff;
+     --red: #eb7560;
+     --yellow: #dbac00;
+     --fuente-principal: 'DM sans';
+}
+
+
+/* estilos generales */
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 2rem;
+    font-family: var(--fuente-principal);
+    line-height: 1.5;
+    background-color: var(--white);
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+p{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--color-text-body);
+}
+
+img{
+    width: 100%;
+}
+
+.contenedor{
+    width: min(95%, 120rem) !important;
+    margin: 0rem auto;
+    margin-top: 0;
+}
+/** estructura **/
+
+.layout{
+    width: 100%;
+    height: 100%;
+}
+
+
+/** styles switcher **/
+
+.switcher{
+    position: fixed;
+    top: 40%;
+    left: -40px;
+    background-color: var(--color-secondary);
+    border-radius: 0rem 3rem 3rem 0rem;
+    padding: 0.5rem 4rem;
+    z-index: 1001;
+    padding-right: 0.5rem;
+    transition: all 300ms ease;
+}
+
+.switcher:hover{
+    left: -25px;
+}
+
+.switcher:hover .switcher__btn span{
+    transform: rotate(-45deg);
+}
+
+.switcher__btn{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    transition: all 300ms ease;
+}
+
+.switcher__icon-light,
+.switcher__icon-dark{
+    color: #fff;
+    font-size: 1.8rem;
+    height: 3.5rem;
+    width: 4rem;
+    line-height: 3.6rem;
+    transition: all 300ms ease;
+}
+
+
+.switcher__icon-dark{
+    display: none;
+    color: #e5e5e5;
+}
+
+.body-scroll{
+    padding-top: 100px;
+}
+
+.swiper{
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.swiper-about{
+    margin-bottom: 1rem;
+}
+
+.swiper2,
+.swiper3{
+    overflow: hidden;
+}
+
+.swiper-slide img{
+    cursor: grab;
+    transition: all 300ms ease-in-out;
+    
+}
+
+.swiper-slide img:hover{
+    filter: grayscale(1);
+    transform: scale(0.9);
+
+}
+
+.swiper-button-prev{
+    margin-left: 6rem !important;
+    margin-top: 2rem !important;
+    color: var(--color-primary) !important;
+}
+
+.swiper-button-next{
+    margin-right: 6rem !important;
+    margin-top: 2rem !important;
+    color: var(--color-primary) !important;  
+}
+
+.swiper-pagination{
+    margin-bottom: 2rem !important;
+}
+
+.swiper-pagination3{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+
+/** config sweetalert2 **/
+.swal2-popup {
+    font-size: 1.6rem;
+    font-weight: 100 !important;
+}
+
+.swal2-html-container{
+    margin: 6px !important;
+    margin-bottom: 0 !important;
+    font-size: 1.5rem !important;
+}
