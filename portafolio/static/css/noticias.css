@@ -131,7 +131,7 @@
     z-index: 1;
     overflow: hidden;
     padding: 0.6rem 5.5rem;
-    background-color: transparent;
+
     color: var(--color-secondary);
     border-radius: 1rem;
     font-size: 1.2rem;
@@ -141,6 +141,9 @@
     text-transform: uppercase;
     border: 3px solid var(--color-secondary);
     margin-top: 2rem;
+
+    color: var(--white);
+    background-color: var(--color-secondary);
 }
 .new__more-inline{
     display: inline;
@@ -148,8 +151,8 @@
 }
 
 .new__more:hover{
-    color: var(--white);
-    background-color: var(--color-secondary);
+    color: var(--color-secondary);
+    background-color: transparent;
 }
 
 .new__icon{

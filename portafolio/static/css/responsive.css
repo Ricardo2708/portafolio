@@ -450,15 +450,11 @@
         margin-bottom: 5rem;
     }
 
-    .fleft__btn{
-        position: absolute;
-        top: 6rem;
-        left: 0;
-        border-radius: 0.5rem;
-        font-size: 1.4rem;
-        padding: 1.5rem 8.4rem;
-        width: 100%;
+    .form__modal{
+        padding: 0 !important;
     }
+
+
 
     .fleft__group{
         height: 5rem;
@@ -491,5 +487,48 @@
 
     .modal__btn__content a:first-of-type{
         display: none;
+    }
+
+    .modal-contenido{
+        width: 90% !important;
+    }
+
+    .image__form{
+        display: none;
+    }
+    .contact__title{
+        font-size: 4rem;
+    }
+
+    .fleft__btn{
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: var(--color-secondary);
+        color: var(--white);
+        border-radius: 16px;
+        padding: 1.2rem 6rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-top: 0.15rem;
+        transition: all 300ms ease-in-out;
+        text-transform: uppercase;
+
+        position: absolute;
+        bottom: -54px;
+        border-radius: 0.5rem;
+        display: block;
+        width: 100%;
+        left: -1px;
+    }
+
+    .fleft__form-control{
+        padding-left: 4.5rem;
+    }
+
+    .services__header{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
 }
