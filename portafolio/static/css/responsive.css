@@ -237,6 +237,10 @@
     .grid__noticia figure{
         height: auto;
     }
+
+    .image__form{
+        display: none;
+    }
 }
 
 @media (max-width: 765px){
@@ -493,9 +497,7 @@
         width: 90% !important;
     }
 
-    .image__form{
-        display: none;
-    }
+
     .contact__title{
         font-size: 4rem;
     }
